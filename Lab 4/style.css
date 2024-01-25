@@ -23,8 +23,8 @@ th {
 }
 
 body {
-    display: flex;
-    justify-content: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
 }
 
 .negru {
@@ -33,4 +33,12 @@ body {
 
 .alb {
     background-color: #ffffff;
+}
+
+
+div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
 }

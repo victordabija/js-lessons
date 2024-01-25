@@ -1,4 +1,4 @@
-document.write(`<table>`)
+document.write(`<div><table>`)
 
 for (let i = 1; i <= 8; i++) {
     document.write(`<tr>`);
@@ -10,4 +10,4 @@ for (let i = 1; i <= 8; i++) {
     document.write(`</tr>`);
 }
 
-document.write(`</table>`);
+document.write(`</table></div>`);

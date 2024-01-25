@@ -1,4 +1,4 @@
-document.write(`<table>`)
+document.write(`<div><table>`)
 
 document.write(`<tr>`)
 document.write(`<th>n</th>`)
@@ -14,4 +14,4 @@ for (let i = 1; i <= 10; i++) {
     document.write(`</tr>`)
 }
 
-document.write(`</table>`)
+document.write(`</table></div>`)
