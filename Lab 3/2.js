@@ -16,3 +16,19 @@ if (getRandomInt(0, 10) === number) {
 } else  {
     alert("Mai incearca");
 }
+
+document.write(`<table>`)
+
+for (let i = 1; i <= 8; i++) {
+    document.write(`<tr>`)
+    for (let j = i; j <= 8; j++) {
+        if (j % 2 === 0) {
+            document.write(`<td class="alb"></td>`)
+        } else {
+            document.write(`<td class="negru"></td>`)
+        }
+    }
+    document.write(`</tr>`)
+}
+
+document.write(`</table>`)

@@ -1,0 +1,36 @@
+img {
+    width: 200px;
+    margin: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+
+td, th {
+    border: 1px solid #000000;
+}
+
+td, th {
+    padding: 20px;
+    text-align: center;
+}
+
+th {
+    background-color: #0B60B0;
+    color: #ffffff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.negru {
+    background-color: #000000;
+}
+
+.alb {
+    background-color: #ffffff;
+}
