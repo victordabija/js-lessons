@@ -1,14 +1,6 @@
 const productNumber = parseInt(prompt("Introduceti numarul produsului: "));
 const cantitateaProdusului = parseInt(prompt("Introduceti cantitatea: "));
 
-const products = {
-    1: 2.98,
-    2: 4.5,
-    3: 9.98,
-    4: 4.49,
-    5: 6.87
-}
-
 let suma;
 
 switch (productNumber) {
@@ -30,7 +22,7 @@ switch (productNumber) {
 }
 
 if (suma) {
-    alert(`Suma: ${cantitateaProdusului * products[productNumber]} $`);
+    alert(`Suma: ${suma} $`);
 } else {
     alert("Error");
 }
