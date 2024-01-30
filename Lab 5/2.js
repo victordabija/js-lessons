@@ -10,8 +10,15 @@ const average = function (x, y, z) {
     return (x + y + z) / 3;
 }
 
-const maximum = function (x, y, z) {
-    return Math.max(z, y, z)
+const maximum = function (...arr) {
+    let max = arr[0];
+    for (const arrElement of arr) {
+        if (arrElement > max) {
+            max = arrElement;
+        }
+    }
+
+    return max;
 }
 
 console.log(`Produsul: ${produsul(a, b, c)}`);

@@ -10,8 +10,15 @@ function media(x, y, z) {
     return (x + y + z) / 3;
 }
 
-function min(x, y, z) {
-    return Math.min(x, y, z);
+function min(...arr) {
+    let min = arr[0];
+    for (const arrElement of arr) {
+        if (arrElement < min) {
+            min = arrElement;
+        }
+    }
+
+    return min;
 }
 
 console.log(`Suma: ${suma(a, b, c)}`);
