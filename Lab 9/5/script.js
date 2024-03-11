@@ -4,6 +4,7 @@
 
 const date = document.getElementById('date');
 const btn = document.getElementById('btn');
+const zodiac = document.getElementById('zodiac');
 
 function getZodiac(data) {
     const date = new Date(data);
@@ -42,6 +43,5 @@ function getZodiac(data) {
     
 
 btn.addEventListener('click', () => {
-    const zodiac = getZodiac(date.value);
-    alert("Zodiacul dvs: " + zodiac);
+    zodiac.innerText = `Zodiacul dvs: ${getZodiac(date.value)}`
 });

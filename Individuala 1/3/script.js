@@ -8,6 +8,11 @@ const dateElement = document.getElementById('date');
 const currentDate = new Date();
 const birthdayDate = new Date(dataNasterii);
 
+const years = currentDate.getFullYear() - birthdayDate.getFullYear();
+
+console.log(years)
+
+
 getTextDays = (day) => {
     if (day === 1) {
         return `${day} zi `;

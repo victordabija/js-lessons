@@ -6,9 +6,19 @@
 }
 
 .container {
-    width: 300px;
+    margin: 0 auto;
+    width: 400px;
     height: 100vh;
-    margin: 300px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 100px;
+}
+
+.form {
+    top: 200px;
+    position: absolute;
 }
 
 input {
