@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor Valutar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="title">
+        <h2 id="mainTitle">Convertor Valutar</h2>
+        <div id="secondTitle">
+            <h2 id="fromCurrencyValue"></h2>
+            <span id="fromCurrencyName"></span>
+            <h2 id="equal">=</h2>
+            <h2 id="toCurrencyValue"></h2>
+            <span id="toCurrencyName"></span>
+        </div>
+    </div>
+    <div class="body">
+        <div class="block">
+            <div class="din">
+                <input type="text" id="amount" placeholder="Introduceți suma">
+
+                <select id="fromCurrency">
+                    <option selected disabled>...</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="MDL">MDL</option>
+                </select>
+            </div>
+            <div class="in">
+                <input type="text" id="result" placeholder="Rezultatul va fi afișat aici" readonly>
+
+                <select id="toCurrency">
+                    <option selected disabled>...</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="MDL">MDL</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="swap">
+            <img src="./sources/swap.png" alt="Swap">
+        </button>
+    </div>
+</div>
+<script src="script.js">
+</script>
+</body>
+</html>
