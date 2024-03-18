@@ -5,6 +5,7 @@ const exchangeRates = {
     MDL: { title: "Moldovan Leu", USD: 0.056, EUR: 0.044, GBP: 0.037, MDL: 1 }
 };
 
+// inputurile, selecturile si butonul de schimb
 const swap = document.getElementById('swap');
 const fromCurrencyElement = document.getElementById('fromCurrency');
 const toCurrencyElement = document.getElementById('toCurrency');
@@ -27,6 +28,7 @@ const calculeaza = () => {
 
     let convertedAmount = amount * exchangeRates[fromCurrency][toCurrency];
 
+    // daca am introdus o litera in select el automat pune 0
     if (isNaN(convertedAmount)) {
         convertedAmount = 0;
     }
@@ -45,10 +47,7 @@ fromCurrencyElement.addEventListener('change', () => {
     mainTitle.style.display = 'none';
     secondTitle.style.display = 'flex';
 
-    if (amountElement.value === '') {
-        amountElement.value = 1;
-    }
-
+    // afiseaza valuta initiala in header
     fromCurrencyValue.innerText = "1";
     fromCurrencyName.innerText = exchangeRates[fromCurrencyElement.value].title;
 
@@ -56,6 +55,7 @@ fromCurrencyElement.addEventListener('change', () => {
 });
 
 toCurrencyElement.addEventListener('change', () => {
+    // afiseaza valuta secundara in header
     toCurrencyValue.innerText = exchangeRates[toCurrencyElement.value][fromCurrencyElement.value];
     toCurrencyName.innerText = exchangeRates[toCurrencyElement.value].title;
     equal.style.display = 'block';
@@ -69,10 +69,12 @@ swap.addEventListener('click', () => {
     const fromCurrency = fromCurrencyElement.value;
     const resultValue = resultInput.value;
 
+    // setam valorile noi pentru selecturi si inputul cu amount
     toCurrencyElement.value = fromCurrency;
     fromCurrencyElement.value = toCurrency;
     amountElement.value = resultValue;
 
+    // interschimbam valorile din header
     fromCurrencyValue.innerText = "1";
     fromCurrencyName.innerText = exchangeRates[fromCurrency].title;
 
