@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor Valutar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2 id="title">Convertor Valutar</h2>
+    <div class="block">
+        <div class="column">
+            <div class="input">
+                <label for="amount">Introduceti valoarea</label>
+                <input type="text" id="amount" placeholder="0.00" value="100">
+            </div>
+
+            <div class="valutes">
+                <button class="button btn1 active">MDL</button>
+                <button class="button btn1">USD</button>
+                <button class="button btn1">EUR</button>
+                <button class="button btn1">RUB</button>
+                <button class="button btn1">RON</button>
+                <button class="button btn1">UAH</button>
+                <button class="button btn1">GBP</button>
+                <button class="button btn1">CHF</button>
+            </div>
+        </div>
+        <div class="column">
+            <h3 class="equal">=</h3>
+        </div>
+        <div class="column">
+            <div class="input">
+                <label for="result">Rezultat</label>
+                <input type="text" id="result" placeholder="Rezultatul va fi afișat aici">
+            </div>
+
+            <div class="valutes">
+                <button class="button btn2">MDL</button>
+                <button class="button btn2 active">USD</button>
+                <button class="button btn2">EUR</button>
+                <button class="button btn2">RUB</button>
+                <button class="button btn2">RON</button>
+                <button class="button btn2">UAH</button>
+                <button class="button btn2">GBP</button>
+                <button class="button btn2">CHF</button>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <p>Cursul pentru data de <span id="date"></span></p>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

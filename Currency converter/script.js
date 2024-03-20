@@ -1,8 +1,8 @@
 const exchangeRates = {
-    USD: { title: "United States Dollar", USD: 1, EUR: 0.84, GBP: 0.73, MDL: 17.61 },
-    EUR: { title: "Euro", USD: 1.19, EUR: 1, GBP: 0.86, MDL: 19.12 },
-    GBP: { title: "Great Britain Pound", USD: 1.37, EUR: 1.16, GBP: 1, MDL: 22.44 },
-    MDL: { title: "Moldovan Leu", USD: 0.056, EUR: 0.044, GBP: 0.037, MDL: 1 }
+    USD: {title: "United States Dollar", USD: 1, EUR: 0.84, GBP: 0.73, MDL: 17.61},
+    EUR: {title: "Euro", USD: 1.19, EUR: 1, GBP: 0.86, MDL: 19.12},
+    GBP: {title: "Great Britain Pound", USD: 1.37, EUR: 1.16, GBP: 1, MDL: 22.44},
+    MDL: {title: "Moldovan Leu", USD: 0.056, EUR: 0.044, GBP: 0.037, MDL: 1}
 };
 
 // inputurile, selecturile si butonul de schimb
@@ -37,8 +37,14 @@ const calculeaza = () => {
 }
 
 // detectam ca se scrie in input
-amountElement.addEventListener('input', () => {
-    calculeaza();
+document.addEventListener('keydown', (e) => {
+    if ((e.keyCode >= 32 && e.keyCode <= 47) || (e.keyCode >= 58)) {
+        e.preventDefault();
+    }
+
+    amountElement.addEventListener('input', () => {
+        calculeaza();
+    });
 });
 
 // detectam daca s-a schimbat valoarea la unul din select-uri si chemam functia care calculeaza
@@ -51,16 +57,23 @@ fromCurrencyElement.addEventListener('change', () => {
     fromCurrencyValue.innerText = "1";
     fromCurrencyName.innerText = exchangeRates[fromCurrencyElement.value].title;
 
+    if (toCurrencyElement.value !== "...") {
+        toCurrencyValue.innerText = exchangeRates[fromCurrencyElement.value][toCurrencyElement.value];
+        toCurrencyName.innerText = exchangeRates[toCurrencyElement.value].title;
+    }
+
+    amountElement.value = "1";
+
     calculeaza();
 });
 
 toCurrencyElement.addEventListener('change', () => {
     // afiseaza valuta secundara in header
-    toCurrencyValue.innerText = exchangeRates[toCurrencyElement.value][fromCurrencyElement.value];
+    calculeaza();
+
+    toCurrencyValue.innerText = exchangeRates[fromCurrencyElement.value][toCurrencyElement.value];
     toCurrencyName.innerText = exchangeRates[toCurrencyElement.value].title;
     equal.style.display = 'block';
-
-    calculeaza();
 });
 
 // interschimbam valorile la select-uri si inputuri
@@ -76,10 +89,10 @@ swap.addEventListener('click', () => {
 
     // interschimbam valorile din header
     fromCurrencyValue.innerText = "1";
-    fromCurrencyName.innerText = exchangeRates[fromCurrency].title;
+    fromCurrencyName.innerText = exchangeRates[fromCurrencyElement.value].title;
 
-    toCurrencyValue.innerText = exchangeRates[fromCurrency][toCurrency];
-    toCurrencyName.innerText = exchangeRates[toCurrency].title;
+    toCurrencyValue.innerText = exchangeRates[fromCurrencyElement.value][toCurrencyElement.value];
+    toCurrencyName.innerText = exchangeRates[toCurrencyElement.value].title;
 
     calculeaza();
 })
